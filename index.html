@@ -1,0 +1,434 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Interpretasi dan Historiografi Sejarah</title>
+
+<style>
+:root {
+  --navy: #243b53;
+  --teal: #287c78;
+  --cream: #faf7f0;
+  --gold: #d5a84f;
+  --ink: #263238;
+  --muted: #62717b;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: var(--cream);
+  color: var(--ink);
+  line-height: 1.8;
+}
+header {
+  padding: 42px 20px 35px;
+  color: white;
+  background: linear-gradient(135deg, #243b53, #287c78);
+  text-align: center;
+}
+header .label {
+  display: inline-block;
+  border: 1px solid #ffffff70;
+  border-radius: 30px;
+  padding: 4px 13px;
+  font-size: 12px;
+  letter-spacing: 1px;
+}
+header h1 {
+  font-size: clamp(26px, 5vw, 39px);
+  line-height: 1.25;
+  margin: 18px auto 12px;
+  max-width: 780px;
+}
+header p {
+  max-width: 650px;
+  margin: auto;
+  color: #edf5f3;
+}
+nav {
+  position: sticky;
+  top: 0;
+  z-index: 5;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  padding: 12px;
+  background: #fff;
+  box-shadow: 0 3px 12px #243b5310;
+}
+nav button, .print-btn {
+  border: 0;
+  border-radius: 9px;
+  padding: 11px 17px;
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+}
+nav button {
+  background: #e9f1ef;
+  color: var(--navy);
+}
+nav button.active, .print-btn {
+  background: var(--teal);
+  color: white;
+}
+main {
+  max-width: 850px;
+  margin: 28px auto;
+  padding: 0 17px;
+}
+.panel { display: none; }
+.panel.active { display: block; }
+.intro {
+  padding: 23px;
+  border-radius: 15px;
+  background: #e5f0ec;
+  border-left: 5px solid var(--teal);
+  margin-bottom: 22px;
+}
+h2 {
+  color: var(--navy);
+  font-size: 23px;
+  line-height: 1.4;
+  margin-top: 30px;
+}
+h3 {
+  color: var(--teal);
+  font-size: 18px;
+  margin-bottom: 6px;
+}
+.card {
+  background: white;
+  border: 1px solid #e7e4dc;
+  border-radius: 14px;
+  padding: 21px;
+  margin: 16px 0;
+  box-shadow: 0 4px 14px #243b5307;
+}
+.tag {
+  color: #94691a;
+  font-size: 12px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+.example {
+  background: #fff7e5;
+  border-left: 4px solid var(--gold);
+  border-radius: 8px;
+  padding: 15px 18px;
+  margin: 14px 0;
+}
+.compare {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 15px 0;
+  background: white;
+}
+.compare th, .compare td {
+  border: 1px solid #dfe6e3;
+  padding: 12px;
+  text-align: left;
+  vertical-align: top;
+}
+.compare th {
+  background: #e5f0ec;
+  color: var(--navy);
+}
+li { margin: 7px 0; }
+.question {
+  border: 1px solid #e4e7e3;
+  background: white;
+  border-radius: 12px;
+  padding: 17px 20px;
+  margin: 14px 0;
+}
+.number {
+  display: inline-flex;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  justify-content: center;
+  align-items: center;
+  background: #e5f0ec;
+  color: var(--teal);
+  font-weight: bold;
+  margin-right: 8px;
+}
+.summary {
+  padding: 22px;
+  background: var(--navy);
+  color: white;
+  border-radius: 14px;
+  margin: 24px 0;
+}
+.summary h2 { color: #f2d28c; margin-top: 0; }
+.print-wrap { text-align: center; margin: 25px 0; }
+footer {
+  text-align: center;
+  background: #e9eee9;
+  color: var(--muted);
+  padding: 22px 15px;
+  font-size: 13px;
+}
+@media (max-width: 500px) {
+  header { padding: 32px 17px; }
+  nav { gap: 7px; }
+  nav button { padding: 10px 12px; }
+  .card { padding: 17px; }
+  .compare th, .compare td { padding: 8px; font-size: 13px; }
+}
+@media print {
+  nav, .print-wrap, footer { display: none; }
+  .panel { display: block !important; }
+  body { background: white; }
+  .card { box-shadow: none; break-inside: avoid; }
+}
+</style>
+</head>
+
+<body>
+<header>
+  <span class="label">MEDIA PEMBELAJARAN SEJARAH</span>
+  <h1>Menerapkan Tahap Interpretasi dan Historiografi dalam Penulisan Sejarah</h1>
+  <p>Memahami fakta masa lalu, menafsirkan maknanya, dan menyusunnya menjadi tulisan sejarah yang runtut serta dapat dipertanggungjawabkan.</p>
+</header>
+
+<nav>
+  <button id="btnMateri" class="active" onclick="showTab('materi')">📚 Materi</button>
+  <button id="btnSoal" onclick="showTab('soal')">✍️ Latihan Esai</button>
+</nav>
+
+<main>
+<section id="materi" class="panel active">
+  <div class="intro">
+    <strong>Tujuan pembelajaran</strong>
+    <p>Setelah mempelajari materi ini, siswa diharapkan mampu menjelaskan pengertian interpretasi dan historiografi, menguraikan tahap-tahapnya, membedakan keduanya, serta menerapkannya dalam penulisan sejarah sederhana.</p>
+  </div>
+
+  <div class="card">
+    <span class="tag">Bagian 01</span>
+    <h2>Memahami Tahapan Penelitian Sejarah</h2>
+    <p>Penelitian sejarah merupakan proses sistematis untuk mempelajari peristiwa masa lalu berdasarkan sumber yang dapat diperiksa. Dalam metode sejarah, tahapan yang umum digunakan adalah:</p>
+    <ol>
+      <li><strong>Heuristik:</strong> mencari dan mengumpulkan sumber sejarah.</li>
+      <li><strong>Kritik sumber:</strong> memeriksa keaslian sumber dan kredibilitas informasinya.</li>
+      <li><strong>Interpretasi:</strong> menafsirkan fakta serta menghubungkan fakta-fakta sejarah.</li>
+      <li><strong>Historiografi:</strong> menyusun hasil penelitian menjadi tulisan sejarah.</li>
+    </ol>
+    <p>Interpretasi dan historiografi saling berkaitan. Peneliti terlebih dahulu memahami makna fakta yang ditemukan, kemudian menyajikan hasil pemahamannya dalam bentuk tulisan yang teratur.</p>
+  </div>
+
+  <div class="card">
+    <span class="tag">Bagian 02</span>
+    <h2>A. Tahap Interpretasi dalam Penelitian Sejarah</h2>
+
+    <h3>1. Pengertian interpretasi</h3>
+    <p>Interpretasi adalah tahap menafsirkan fakta-fakta sejarah yang telah melalui kritik sumber. Pada tahap ini, peneliti berusaha memahami hubungan antarfakta, latar belakang peristiwa, penyebab, serta akibatnya.</p>
+    <p>Fakta sejarah tidak cukup hanya dikumpulkan. Fakta perlu dihubungkan agar dapat menjelaskan bagaimana dan mengapa suatu peristiwa terjadi.</p>
+
+    <h3>2. Tujuan interpretasi</h3>
+    <ul>
+      <li>Memberikan makna terhadap fakta-fakta sejarah.</li>
+      <li>Menjelaskan hubungan antara satu fakta dan fakta lainnya.</li>
+      <li>Memahami latar belakang, proses, serta akibat peristiwa.</li>
+      <li>Menyusun penjelasan yang logis berdasarkan bukti.</li>
+    </ul>
+
+    <h3>3. Cara melakukan interpretasi</h3>
+    <p>Dalam praktiknya, interpretasi dapat dilakukan melalui dua proses yang saling melengkapi.</p>
+    <ul>
+      <li><strong>Analisis:</strong> menguraikan sumber atau fakta menjadi bagian-bagian yang dapat dipelajari, misalnya mengidentifikasi pelaku, waktu, tempat, penyebab, dan akibat.</li>
+      <li><strong>Sintesis:</strong> menghubungkan berbagai fakta untuk membentuk pemahaman yang lebih menyeluruh mengenai suatu peristiwa.</li>
+    </ul>
+    <p>Peneliti dapat menggunakan keduanya secara bergantian. Hasil interpretasi harus tetap didukung sumber dan tidak boleh didasarkan hanya pada dugaan pribadi.</p>
+
+    <h3>4. Hal yang perlu diperhatikan</h3>
+    <ul>
+      <li>Gunakan fakta yang sudah diperiksa melalui kritik sumber.</li>
+      <li>Bandingkan informasi dari beberapa sumber apabila tersedia.</li>
+      <li>Perhatikan konteks waktu, tempat, sosial, politik, dan budaya.</li>
+      <li>Bedakan fakta yang didukung bukti dengan pendapat atau dugaan.</li>
+      <li>Hindari memaksakan kesimpulan yang tidak didukung sumber.</li>
+    </ul>
+
+    <div class="example">
+      <strong>Contoh interpretasi</strong>
+      <p>Seorang siswa meneliti sejarah berdirinya sebuah sekolah. Ia menemukan dokumen tahun pendirian, foto bangunan lama, dan wawancara dengan mantan guru. Siswa tersebut menghubungkan sumber-sumber itu untuk memahami alasan sekolah didirikan dan perubahan fungsinya dari waktu ke waktu.</p>
+      <p>Menghubungkan bukti tersebut untuk menjelaskan latar belakang dan perubahan sekolah merupakan kegiatan interpretasi.</p>
+    </div>
+  </div>
+
+  <div class="card">
+    <span class="tag">Bagian 03</span>
+    <h2>B. Tahap Historiografi dalam Penelitian Sejarah</h2>
+
+    <h3>1. Pengertian historiografi</h3>
+    <p>Historiografi adalah tahap penulisan atau penyajian hasil penelitian sejarah berdasarkan fakta dan interpretasi yang telah dilakukan. Pada tahap ini, peneliti menyusun penjelasan sejarah agar dapat dibaca dan dipahami orang lain.</p>
+    <p>Historiografi bukan sekadar menyalin sumber. Penulis perlu menyusun uraian secara runtut, menggunakan bukti yang relevan, dan menyampaikan kesimpulan sesuai hasil penelitian.</p>
+
+    <h3>2. Tujuan historiografi</h3>
+    <ul>
+      <li>Menyampaikan hasil penelitian sejarah kepada pembaca.</li>
+      <li>Menjelaskan peristiwa secara runtut dan mudah dipahami.</li>
+      <li>Menghubungkan fakta dan hasil interpretasi dalam suatu uraian.</li>
+      <li>Mendokumentasikan pengetahuan tentang masa lalu.</li>
+    </ul>
+
+    <h3>3. Langkah-langkah menyusun tulisan sejarah</h3>
+    <ol>
+      <li><strong>Menentukan fokus dan judul:</strong> pilih peristiwa yang dibahas agar tulisan tidak terlalu luas.</li>
+      <li><strong>Menyusun kerangka:</strong> tentukan urutan pembahasan, mulai dari latar belakang hingga akibat peristiwa.</li>
+      <li><strong>Mengembangkan uraian:</strong> tulis penjelasan berdasarkan fakta dan hasil interpretasi.</li>
+      <li><strong>Mencantumkan sumber:</strong> sebutkan sumber informasi atau referensi yang digunakan sesuai aturan penulisan.</li>
+      <li><strong>Memeriksa kembali tulisan:</strong> periksa ketepatan fakta, urutan waktu, bahasa, dan hubungan antargagasan.</li>
+    </ol>
+
+    <h3>4. Ciri tulisan sejarah yang baik</h3>
+    <ul>
+      <li>Memiliki fokus pembahasan yang jelas.</li>
+      <li>Disusun secara runtut dan logis.</li>
+      <li>Menggunakan fakta yang dapat ditelusuri sumbernya.</li>
+      <li>Membedakan fakta, interpretasi, dan dugaan.</li>
+      <li>Mencantumkan sumber serta menghindari pengubahan bukti demi mendukung pendapat pribadi.</li>
+    </ul>
+
+    <div class="example">
+      <strong>Contoh historiografi</strong>
+      <p>Setelah meneliti sejarah sebuah sekolah, siswa menyusun tulisan berjudul “Perkembangan Sekolah X dari Masa ke Masa”. Tulisan tersebut berisi latar belakang pendirian, perubahan bangunan, perkembangan jumlah siswa, dan peran sekolah bagi masyarakat. Setiap penjelasan didasarkan pada dokumen, foto, atau wawancara yang telah diperiksa.</p>
+      <p>Menyusun hasil penelitian tersebut menjadi uraian sejarah merupakan kegiatan historiografi.</p>
+    </div>
+  </div>
+
+  <div class="card">
+    <span class="tag">Bagian 04</span>
+    <h2>C. Perbedaan Interpretasi dan Historiografi</h2>
+    <table class="compare">
+      <thead>
+        <tr>
+          <th>Aspek</th>
+          <th>Interpretasi</th>
+          <th>Historiografi</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Pengertian</td>
+          <td>Menafsirkan dan menghubungkan fakta sejarah.</td>
+          <td>Menuliskan hasil penelitian sejarah.</td>
+        </tr>
+        <tr>
+          <td>Fokus</td>
+          <td>Memahami makna dan hubungan antarfakta.</td>
+          <td>Menyajikan penjelasan secara runtut.</td>
+        </tr>
+        <tr>
+          <td>Kegiatan</td>
+          <td>Menganalisis penyebab, proses, dan akibat.</td>
+          <td>Menyusun kerangka, uraian, dan kesimpulan.</td>
+        </tr>
+        <tr>
+          <td>Hasil</td>
+          <td>Penafsiran atau pemahaman sejarah yang didukung bukti.</td>
+          <td>Tulisan sejarah yang dapat dibaca dan diperiksa.</td>
+        </tr>
+      </tbody>
+    </table>
+    <p>Singkatnya, interpretasi membantu peneliti memahami makna fakta, sedangkan historiografi menyampaikan hasil pemahaman tersebut dalam bentuk tulisan.</p>
+  </div>
+
+  <div class="card">
+    <span class="tag">Bagian 05</span>
+    <h2>D. Contoh Penerapan Kedua Tahap</h2>
+    <p>Perhatikan contoh penelitian sederhana mengenai perubahan pasar tradisional di suatu daerah.</p>
+    <ol>
+      <li><strong>Fakta yang ditemukan:</strong> foto lama menunjukkan pasar dengan bangunan sederhana. Dokumen pemerintah mencatat adanya renovasi. Pedagang menceritakan perubahan fasilitas pasar.</li>
+      <li><strong>Interpretasi:</strong> peneliti membandingkan sumber dan menafsirkan bagaimana renovasi memengaruhi kondisi pasar serta kegiatan perdagangan.</li>
+      <li><strong>Historiografi:</strong> peneliti menulis sejarah perubahan pasar, mulai dari kondisi awal, proses renovasi, hingga dampaknya bagi pedagang dan masyarakat.</li>
+    </ol>
+    <div class="example">
+      <strong>Ingat!</strong>
+      <p>Interpretasi tidak boleh melampaui bukti yang tersedia. Historiografi juga tidak boleh mengubah fakta hanya agar tulisan terlihat menarik. Keduanya perlu dilakukan secara kritis dan bertanggung jawab.</p>
+    </div>
+  </div>
+
+  <div class="summary">
+    <h2>Rangkuman Materi</h2>
+    <ul>
+      <li>Interpretasi adalah proses menafsirkan dan menghubungkan fakta sejarah.</li>
+      <li>Analisis menguraikan fakta, sedangkan sintesis menghubungkan fakta menjadi pemahaman yang menyeluruh.</li>
+      <li>Historiografi adalah tahap penulisan hasil penelitian sejarah.</li>
+      <li>Tulisan sejarah yang baik harus runtut, berbasis bukti, dan mencantumkan sumber.</li>
+      <li>Interpretasi membantu memahami peristiwa, sementara historiografi menyampaikan pemahaman tersebut kepada pembaca.</li>
+    </ul>
+  </div>
+
+  <div class="print-wrap">
+    <button class="print-btn" onclick="window.print()">🖨️ Cetak Materi</button>
+  </div>
+</section>
+
+<section id="soal" class="panel">
+  <div class="intro">
+    <strong>Latihan esai</strong>
+    <p>Bacalah pertanyaan dengan saksama. Jawablah berdasarkan pemahamanmu terhadap materi. Tuliskan soal dan jawaban di buku catatan masing-masing.</p>
+  </div>
+
+  <div class="question">
+    <span class="number">1</span>
+    Jelaskan pengertian interpretasi dalam penelitian sejarah dan mengapa tahap tersebut diperlukan setelah kritik sumber!
+  </div>
+  <div class="question">
+    <span class="number">2</span>
+    Apa perbedaan analisis dan sintesis dalam tahap interpretasi? Berikan contoh sederhana!
+  </div>
+  <div class="question">
+    <span class="number">3</span>
+    Mengapa penulisan sejarah harus didasarkan pada fakta dan sumber yang dapat dipertanggungjawabkan?
+  </div>
+  <div class="question">
+    <span class="number">4</span>
+    Jelaskan perbedaan antara interpretasi dan historiografi berdasarkan kegiatan yang dilakukan serta hasilnya!
+  </div>
+  <div class="question">
+    <span class="number">5</span>
+    Pilih satu peristiwa sejarah lokal yang kamu ketahui. Jelaskan bagaimana kamu menafsirkan fakta-fakta tentang peristiwa tersebut, kemudian menyusunnya menjadi tulisan sejarah!
+  </div>
+
+  <div class="example">
+    <strong>Petunjuk pengerjaan</strong>
+    <p>Kerjakan kelima soal secara mandiri di buku catatan. Gunakan kalimat sendiri, tulis dengan rapi, dan sertakan alasan atau contoh apabila diminta. Tidak perlu mengetik jawaban di website ini.</p>
+  </div>
+
+  <div class="print-wrap">
+    <button class="print-btn" onclick="window.print()">🖨️ Cetak Soal</button>
+  </div>
+</section>
+</main>
+
+<footer>
+  Media Pembelajaran Sejarah · Interpretasi dan Historiografi<br>
+  Belajar sejarah dengan kritis, runtut, dan bertanggung jawab.
+</footer>
+
+<script>
+function showTab(tab) {
+  document.querySelectorAll('.panel').forEach(function(panel) {
+    panel.classList.remove('active');
+  });
+  document.querySelectorAll('nav button').forEach(function(button) {
+    button.classList.remove('active');
+  });
+  document.getElementById(tab).classList.add('active');
+  document.getElementById(
+    tab === 'materi' ? 'btnMateri' : 'btnSoal'
+  ).classList.add('active');
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+</script>
+</body>
+</html>
